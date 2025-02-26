@@ -19,6 +19,9 @@ class Box {
     }
 
     public boolean contientTruc(Thing objetATester){
-        return true;
+        if (this.contents.contains(objetATester)){
+            return true;
+        }
+        return false;
     }
 }
