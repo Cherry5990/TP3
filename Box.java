@@ -13,7 +13,12 @@ class Box {
 
     public Box(){System.out.println("Box créée");}
 
-    public void add(Thing aAjouter){
+    public boolean add(Thing aAjouter){
         this.contents.add(aAjouter);
+        return true;
+    }
+
+    public boolean contientTruc(Thing objetATester){
+        return true;
     }
 }
