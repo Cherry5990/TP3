@@ -11,7 +11,9 @@ public class TestsBoxes {
     @Test
     public void testBoxAdd(){
         Box b = new Box();
-        b.add("Truc1");
-        b.add("Truc2");
+        Thing truc1 = new Thing("chaussette");
+        Thing truc2 = new Thing("chaussure");
+        b.add(truc1);
+        b.add(truc2);
     }
 }

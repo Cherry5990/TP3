@@ -1,12 +1,19 @@
 import java.util.ArrayList;
 
-public class Box {
+class Thing{
+    private String name;
 
-    ArrayList<String> contents = new ArrayList<String>();
+    public Thing(String name){
+        this.name = name;
+    }
+}
+
+class Box {
+    private ArrayList<Thing> contents = new ArrayList<Thing>();
 
     public Box(){System.out.println("Box créée");}
 
-    public void add(String aAjouter){
+    public void add(Thing aAjouter){
         this.contents.add(aAjouter);
     }
 }
