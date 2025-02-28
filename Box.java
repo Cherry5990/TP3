@@ -6,6 +6,18 @@ class Thing{
     public Thing(String name){
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object autreObject){
+        if (autreObject == null){return false;}
+
+        if (autreObject == this){return true;}
+
+        if (!(autreObject instanceof Thing)){return false;}
+
+        Thing temp = (Thing) autreObject;
+        return this.name == temp.name;
+    }
 }
 
 class Box {
@@ -23,5 +35,21 @@ class Box {
             return true;
         }
         return false;
+    }
+
+    public void retireTruc(Thing objetATester){
+        if (this.contientTruc(objetATester)){this.contents.remove(objetATester);}
+    }
+
+    @Override
+    public boolean equals(Object autreObject){
+        if (autreObject == null){return false;}
+
+        if (autreObject == this){return true;}
+
+        if (!(autreObject instanceof Box)){return false;}
+
+        Box temp = (Box) autreObject;
+        return this.contents.equals(temp.contents);
     }
 }
