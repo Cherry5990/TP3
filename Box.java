@@ -7,6 +7,10 @@ class Thing{
         this.name = name;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     @Override
     public boolean equals(Object autreObject){
         if (autreObject == null){return false;}
@@ -56,6 +60,22 @@ class Box {
 
     public void close(){
         this.estOuverte = false;
+    }
+
+    public String actionLook(){
+        String retourLook = "La boite est fermée";
+        if (this.isOpen()){
+            retourLook = "La boite contient :";
+            int cpt = 0;
+            for (Thing thing : this.contents){
+                retourLook = retourLook + " " + thing.getName();
+                ++cpt;
+                if (cpt < this.contents.size()){
+                    retourLook = retourLook + ",";
+                }
+            }
+        }
+        return retourLook;
     }
 
     @Override
