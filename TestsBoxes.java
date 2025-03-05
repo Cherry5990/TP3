@@ -58,4 +58,20 @@ public class TestsBoxes {
         b.close();
         assertEquals(false, b.isOpen());
     }
+
+    @Test
+    public void testActionLook(){
+        Box b = new Box();
+        assertEquals("La boite est fermée", b.actionLook());
+
+        Thing truc1 = new Thing("chaussette");
+        Thing truc2 = new Thing("chaussure");
+        b.add(truc1);
+        b.add(truc2);
+        
+        assertEquals("La boite est fermée", b.actionLook());
+        b.open();
+        assertEquals("La boite contient : chaussette, chaussure", b.actionLook());
+        
+    }
 }
