@@ -1,11 +1,13 @@
 import org.junit.*;
 import static org.junit.Assert.assertEquals;
+//import com.google.gson.Gson;
 
 public class TestsBoxes {
 
     @Test
     public void testBoxCreate(){
         Box b = new Box();
+        b.isOpen();
     }
 
     @Test
@@ -25,9 +27,9 @@ public class TestsBoxes {
         Thing truc3 = new Thing("chaussette");
         b.add(truc1);
 
-        Assert.assertEquals(true, b.contientTruc(truc1));
-        Assert.assertEquals(false, b.contientTruc(truc2));
-        Assert.assertEquals(true, b.contientTruc(truc3)); 
+        assertEquals(true, b.contientTruc(truc1));
+        assertEquals(false, b.contientTruc(truc2));
+        assertEquals(true, b.contientTruc(truc3)); 
     }
 
     @Test
@@ -42,6 +44,18 @@ public class TestsBoxes {
         b2.add(truc2);
 
         b.retireTruc(truc1);
-        Assert.assertEquals(b2, b);
+        assertEquals(b2, b);
+    }
+
+    @Test
+    public void testOuverture(){
+        Box b = new Box();
+        assertEquals(false, b.isOpen());
+
+        b.open();
+        assertEquals(true, b.isOpen());
+        
+        b.close();
+        assertEquals(false, b.isOpen());
     }
 }

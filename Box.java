@@ -21,9 +21,14 @@ class Thing{
 }
 
 class Box {
-    private ArrayList<Thing> contents = new ArrayList<Thing>();
+    private ArrayList<Thing> contents;
+    private boolean estOuverte;
 
-    public Box(){System.out.println("Box créée");}
+    public Box(){
+        this.contents = new ArrayList<Thing>();
+        this.estOuverte = false;
+        System.out.println("Box créée");
+    }
 
     public boolean add(Thing aAjouter){
         this.contents.add(aAjouter);
@@ -39,6 +44,18 @@ class Box {
 
     public void retireTruc(Thing objetATester){
         if (this.contientTruc(objetATester)){this.contents.remove(objetATester);}
+    }
+
+    public boolean isOpen(){
+        return this.estOuverte;
+    }
+
+    public void open(){
+        this.estOuverte = true;
+    }
+
+    public void close(){
+        this.estOuverte = false;
     }
 
     @Override
