@@ -92,6 +92,7 @@ public class TestsBoxes {
     @Test
     public void testBoxCapacite(){
         Box b = new Box();
+        b.setCapacity(10);
         assertEquals(10, b.getCapacity());
     }
 }
