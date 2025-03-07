@@ -86,7 +86,7 @@ class Box {
     public String actionLook(){
         String retourLook = "La boite est fermée";
         if (this.isOpen()){
-            retourLook = "La boite contient : ";
+            retourLook = "La boite contient :";
             //String listString = String.join(", ", this.contents);
             int cpt = 0;
             for (Thing thing : this.contents){
