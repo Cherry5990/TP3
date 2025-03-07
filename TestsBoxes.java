@@ -90,7 +90,7 @@ public class TestsBoxes {
     }
 
     @Test
-    public void testCreationBoxVolume(){
+    public void testBoxCapacite(){
         Box b = new Box();
         assertEquals(10, b.getCapacity());
     }
