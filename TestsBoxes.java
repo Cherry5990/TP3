@@ -79,4 +79,13 @@ public class TestsBoxes {
         assertEquals("La boite contient : chaussette, chaussure", b.actionLook());
         
     }
+
+    @Test
+    public void testCreationThingInt(){
+        Thing truc1 = new Thing(3);
+        Thing truc2 = new Thing("something", 5);
+
+        assertEquals(3, truc1.getVolume());
+        assertEquals(5, truc2.getVolume());
+    }
 }
