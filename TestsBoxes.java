@@ -81,11 +81,17 @@ public class TestsBoxes {
     }
 
     @Test
-    public void testCreationThingInt(){
+    public void testCreationThingVolume(){
         Thing truc1 = new Thing(3);
         Thing truc2 = new Thing("something", 5);
 
         assertEquals(3, truc1.getVolume());
         assertEquals(5, truc2.getVolume());
+    }
+
+    @Test
+    public void testCreationBoxVolume(){
+        Box b = new Box();
+        assertEquals(10, b.getCapacity());
     }
 }
