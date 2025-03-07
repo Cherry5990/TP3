@@ -48,16 +48,26 @@ class Thing{
 class Box {
     private ArrayList<Thing> contents;
     private boolean estOuverte;
+    private int capacity;
 
     public Box(){
         this.contents = new ArrayList<Thing>();
         this.estOuverte = false;
+        this.capacity = -1;
         System.out.println("Box créée");
     }
 
     public boolean add(Thing aAjouter){
         this.contents.add(aAjouter);
         return true;
+    }
+
+    public void setCapacity(int capacite){
+        this.capacity = capacite;
+    }
+
+    public int getCapacity(){
+        return this.capacity;
     }
 
     public boolean contientTruc(Thing objetATester){
